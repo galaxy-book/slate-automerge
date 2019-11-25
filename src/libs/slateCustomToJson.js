@@ -30,7 +30,6 @@ const toJSON = (value, options = {}) => {
             return {
                 object: value.object,
                 data: toJSON(value.data, options),
-                isVoid: value.isVoid,
                 nodes: value.nodes.toArray().map(n => toJSON(n, options)),
                 type: value.type,
             }
@@ -52,7 +51,6 @@ const toJSON = (value, options = {}) => {
             return {
                 object: value.object,
                 data: toJSON(value.data, options),
-                isVoid: value.isVoid,
                 nodes: value.nodes.toArray().map(n => toJSON(n, options)),
                 type: value.type,
             }
@@ -93,7 +91,8 @@ const toJSON = (value, options = {}) => {
         case "text":
             return {
                 object: value.object,
-                leaves: value.leaves.toArray().map(c => toJSON(c, options))
+                text: value.text,
+                marks: value.marks === null ? null : value.marks.toArray().map(m => toJSON(m, options)),
             }
         case "value":
             return valueJSON(value, options)
@@ -176,7 +175,6 @@ const operationJSON = (valueOriginal, options = {}) => {
         if (key === 'properties' && type === 'set_node') {
             const v = {}
             if ('data' in value) v.data = toJSON(value.data, options)
-            if ('isVoid' in value) v.isVoid = value.isVoid
             if ('type' in value) v.type = value.type
             value = v
         }

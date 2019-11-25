@@ -29,9 +29,9 @@ const fromJSON = (value) => {
         }
     })
 
-    if (value.object === "text") {
-        newJson.leaves = value.leaves.map(leaf => createLeaf(leaf))
-    }
+    // if (value.object === "text") {
+    //     newJson.leaves = value.leaves.map(leaf => createLeaf(leaf))
+    // }
 
     return newJson;
 }

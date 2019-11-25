@@ -116,11 +116,11 @@ export class Client extends React.Component {
         const docNew = this.connection.receiveMsg(msg)
         const opSetDiff = Automerge.diff(currentDoc, docNew)
         if (opSetDiff.length !== 0) {
-            let change = this.state.value.change()
-            change = applyAutomergeOperations(opSetDiff, change, () => { this.updateSlateFromAutomerge() });
-            if (change) {
-                this.setState({ value: change.value })
-            }
+            // let change = this.state.value.change()
+            // change = applyAutomergeOperations(opSetDiff, change, () => { this.updateSlateFromAutomerge() });
+            // if (change) {
+            //     this.setState({ value: change.value })
+            // }
         }
     }
 

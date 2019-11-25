@@ -7,11 +7,7 @@ module.exports.initialValue = {
                 "nodes": [
                     {
                         "object": "text",
-                        "leaves": [
-                            {
-                                "text": "This is the editor. Type here."
-                            }
-                        ]
+                        "text": "This is the editor. Type here."
                     }
                 ]
             },
@@ -34,11 +30,7 @@ module.exports.initialValue = {
                                 "nodes": [
                                     {
                                         "object": "text",
-                                        "leaves": [
-                                            {
-                                                "text": "This is node in a list. Hit [ENTER] and then hit [TAB]"
-                                            }
-                                        ]
+                                        "text": "This is node in a list. Hit [ENTER] and then hit [TAB]"
                                     }
                                 ]
                             }
